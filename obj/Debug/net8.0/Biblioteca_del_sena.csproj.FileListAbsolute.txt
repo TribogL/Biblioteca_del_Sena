@@ -1,0 +1,14 @@
+/home/tribog/Documentos/C# documents/Biblioteca_del_sena/bin/Debug/net8.0/Biblioteca_del_sena
+/home/tribog/Documentos/C# documents/Biblioteca_del_sena/bin/Debug/net8.0/Biblioteca_del_sena.deps.json
+/home/tribog/Documentos/C# documents/Biblioteca_del_sena/bin/Debug/net8.0/Biblioteca_del_sena.runtimeconfig.json
+/home/tribog/Documentos/C# documents/Biblioteca_del_sena/bin/Debug/net8.0/Biblioteca_del_sena.dll
+/home/tribog/Documentos/C# documents/Biblioteca_del_sena/bin/Debug/net8.0/Biblioteca_del_sena.pdb
+/home/tribog/Documentos/C# documents/Biblioteca_del_sena/obj/Debug/net8.0/Biblioteca_del_sena.GeneratedMSBuildEditorConfig.editorconfig
+/home/tribog/Documentos/C# documents/Biblioteca_del_sena/obj/Debug/net8.0/Biblioteca_del_sena.AssemblyInfoInputs.cache
+/home/tribog/Documentos/C# documents/Biblioteca_del_sena/obj/Debug/net8.0/Biblioteca_del_sena.AssemblyInfo.cs
+/home/tribog/Documentos/C# documents/Biblioteca_del_sena/obj/Debug/net8.0/Biblioteca_del_sena.csproj.CoreCompileInputs.cache
+/home/tribog/Documentos/C# documents/Biblioteca_del_sena/obj/Debug/net8.0/Biblioteca_del_sena.dll
+/home/tribog/Documentos/C# documents/Biblioteca_del_sena/obj/Debug/net8.0/refint/Biblioteca_del_sena.dll
+/home/tribog/Documentos/C# documents/Biblioteca_del_sena/obj/Debug/net8.0/Biblioteca_del_sena.pdb
+/home/tribog/Documentos/C# documents/Biblioteca_del_sena/obj/Debug/net8.0/Biblioteca_del_sena.genruntimeconfig.cache
+/home/tribog/Documentos/C# documents/Biblioteca_del_sena/obj/Debug/net8.0/ref/Biblioteca_del_sena.dll
