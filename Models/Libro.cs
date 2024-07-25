@@ -15,10 +15,11 @@ namespace Biblioteca_del_sena.Models
 
         public Libro(string titulo, string autor, string genero, int fechaDePublicacion, double precio)
         {
-             this.ISBN = Guid.NewGuid();
+            this.ISBN = Guid.NewGuid();
+            this.Titulo = titulo;
             this.Autor = autor;
             this.Genero = genero;
-            this.FechaDePublicacion = new DateOnly(fechaDePublicacion,1,1);
+            this.FechaDePublicacion = new DateOnly(fechaDePublicacion, 1, 1);
             this.Precio = precio;
         }
 

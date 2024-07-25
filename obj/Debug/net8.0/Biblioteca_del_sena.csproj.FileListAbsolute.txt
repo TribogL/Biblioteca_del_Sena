@@ -12,3 +12,4 @@
 /home/tribog/Documentos/C# documents/Biblioteca_del_sena/obj/Debug/net8.0/Biblioteca_del_sena.pdb
 /home/tribog/Documentos/C# documents/Biblioteca_del_sena/obj/Debug/net8.0/Biblioteca_del_sena.genruntimeconfig.cache
 /home/tribog/Documentos/C# documents/Biblioteca_del_sena/obj/Debug/net8.0/ref/Biblioteca_del_sena.dll
+/home/tribog/Documentos/C# documents/Biblioteca_del_Sena/obj/Debug/net8.0/Biblioteca_del_sena.sourcelink.json

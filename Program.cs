@@ -7,7 +7,9 @@ var open = true;
 while (open)
 {
     Console.Clear();
-    Console.WriteLine(@"/////////////// Biblioteca del Sena \\\\\\\\\\\\\");
+    Console.WriteLine(@"/////////////// Biblioteca del Sena \\\\\\\\\\\\\
+    
+    ");
     Console.WriteLine(@"///////// menu principal \\\\\\\\\\\\
 1)Agregar un libro.
 2)Buscar un libro.
@@ -40,19 +42,19 @@ while (open)
 
                         Console.Clear();
                         Console.WriteLine(@"///////// Buscar libro por género \\\\\\\\\");
-                        // Aquí iría el código para buscar por género
+                        ShowBookByGender();
                         Continue();
                         break;
                     case 2:
                         Console.Clear();
                         Console.WriteLine(@"///////// Buscar libro por autor \\\\\\\\\\\\");
-                        // Aquí iría el código para buscar por autor
+                        ShowBoockByAuthor();
                         Continue();
                         break;
                     case 3:
                         Console.Clear();
                         Console.WriteLine(@"////// Buscar libro por rango de año de lanzamiento \\\\\\");
-                        // Aquí iría el código para buscar por rango de año
+                        ShowBookByDate();
                         Continue();
                         break;
                     case 4:
@@ -64,7 +66,7 @@ while (open)
         case 3:
             Console.Clear();
             Console.WriteLine(@"///////////// Eliminar libros \\\\\\\\\\\\\\\\\");
-            // Aquí iría el código para eliminar un libro
+            DeleteBook();
             Continue();
             break;
         case 4:
@@ -108,6 +110,7 @@ while (open)
             int programExit = int.Parse(Console.ReadLine());
             if (programExit == 1)
             {
+                Console.WriteLine(@"///////// vuelva pronto \\\\\\\\\\");
                 open = false;
             }
             else
@@ -126,13 +129,122 @@ void Continue()
 
 void AddBook()
 {
-
     Console.WriteLine(@"////////////// Agregar un libro a la Biblioteca \\\\\\\\\\\\\\\\");
-    Console.Write("Escriba el nombre del libro: ");
-
+    Console.Write("Ingrese el titullo del libro: ");
+    string? titulo1 = Console.ReadLine();
     Console.Write("Ingrese el nombre del autor del libro: ");
-    Console.Write("Ingrese el ISBN: ");
+    string? autor1 = Console.ReadLine();
+    Console.Write("Ingrese el genero del libro: ");
+    string? genero1 = Console.ReadLine();
     Console.Write("Digite la fecha de publicacion de manera AAAA-MM-DD: ");
-    Console.Write("Escriba el genero del libro: ");
+    int fecha1 = int.Parse(Console.ReadLine());
     Console.Write("Ingrese el precio del libro: ");
+    double precio1 = double.Parse(Console.ReadLine());
+
+    Libro newLibro = new Libro(titulo1, autor1, genero1, fecha1, precio1);
+    biblioteca.Add(newLibro);
+}
+
+void ShowBookByGender()
+{
+    Console.Write("Ingrese el genero: ");
+    string? generoselect = Console.ReadLine();
+    var librosFiltrados = biblioteca.Where(libro => libro.Genero.Equals(generoselect, StringComparison.OrdinalIgnoreCase)).ToList();
+    if (librosFiltrados.Any())
+    {
+        foreach (var libro in librosFiltrados)
+        {
+            Console.WriteLine($@"Titulo: {libro.Titulo}
+Genero: {libro.Genero}
+Autor: {libro.Autor}
+fecha de publicacion: {libro.FechaDePublicacion}
+precio: ${libro.Precio}
+");
+        }
+    }
+    else
+    {
+        Console.WriteLine("No tenemos libros de ese género por el momento...");
+    }
+}
+
+void ShowBoockByAuthor()
+{
+    Console.Write("Ingrese el nombre del autor: ");
+    string? authorselect1 = Console.ReadLine();
+    var librosFiltrados1 = biblioteca.Where(libro => libro.Autor.Equals(authorselect1, StringComparison.OrdinalIgnoreCase)).ToList();
+    if (librosFiltrados1.Any())
+    {
+        foreach (var libro in librosFiltrados1)
+        {
+            Console.WriteLine($@"Titulo: {libro.Titulo}
+Genero: {libro.Genero}
+Autor: {libro.Autor}
+fecha de publicacion: {libro.FechaDePublicacion}
+precio: ${libro.Precio}
+");
+        }
+    }
+    else
+    {
+        Console.WriteLine("No tenemos libros de ese autor por el momento...");
+    }
+}
+
+void ShowBookByDate()
+{
+    Console.Write("Ingrese la fecha de publicación (AAAA/MM/DD): ");
+    DateTime dateselect1;
+    if (DateTime.TryParse(Console.ReadLine(), out dateselect1))
+    {
+        var librosFiltrados1 = biblioteca.Where(libro => libro.FechaDePublicacion.DayOfYear == dateselect1.DayOfYear).ToList();
+        if (librosFiltrados1.Any())
+        {
+            foreach (var libro in librosFiltrados1)
+            {
+                Console.WriteLine($@"Titulo: {libro.Titulo}
+Genero: {libro.Genero}
+Autor: {libro.Autor}
+Fecha de publicacion: {libro.FechaDePublicacion}
+Precio: ${libro.Precio}
+");
+            }
+        }
+        else
+        {
+            Console.WriteLine("No tenemos libros con esa fecha de publicación por el momento...");
+        }
+    }
+    else
+    {
+        Console.WriteLine("Fecha inválida. Por favor, ingrese la fecha en el formato AAAA/MM/DD.");
+    }
+}
+
+void DeleteBook()
+{
+    Console.Write("Digite el título del libro que desea eliminar: ");
+    string? bookSelect = Console.ReadLine();
+    
+    // Encuentra los libros que coinciden con el título
+    var booksToErase = biblioteca.Where(libro => libro.Titulo.Equals(bookSelect, StringComparison.OrdinalIgnoreCase)).ToList();
+    
+    if (booksToErase.Any())
+    {
+        // Eliminar cada libro que coincida
+        foreach (var libro in booksToErase)
+        {
+            biblioteca.Remove(libro);
+        }
+        Console.WriteLine("El libro ha sido eliminado exitosamente.");
+    }
+    else
+    {
+        Console.WriteLine("No se encontró ningún libro con ese título.");
+    }
+}
+
+void Discount()
+{
+    
 }
